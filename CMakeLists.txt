@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.0.0)
+project(algorithm_learning)
+
+#add_executable(acm17000 acm17000.cpp)
+#add_executable(acm17001 acm17001.cpp)
+#add_executable(acm17002 acm17002.cpp)
+add_executable(acm2193 acm2193.cpp)
+add_executable(acm11057 acm11057.cpp)
