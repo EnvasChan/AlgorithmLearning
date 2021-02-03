@@ -6,24 +6,43 @@
 
 using namespace std;
 
-int solve(int a,string b)
+// solve(0, 0,  n);
+//
+/*
+0 0 n
+  0 1 n
+    0 2 n
+    return
+    1 2 n
+    return
+    2 2 n
+    return
+    
+  1 1 n
+    1 2 n
+    return
+  2 1 n
+ 
+
+
+*/
+int solve(int prev, int current, int n)
 {
-    int num = 0;
+  // ...
+  int sum = 0;
 
-    if(b.size() == a)
-    {
-        return 0;
-    }
+  if(current == n)
+  {
+    return 1;
+  }
 
-    if(/*자릿수 비교해서 오림차순이면*/)
-    {
-        /*solve 함수로 b에 1을 증가시켜주며 num에 1을 더해준다
-        ex) num = solve(a, b + 1) + 1;*/  
-    }
-    //solve(a, b + 1) 오름차수가 아니므로 그냥 넘겨준다 */
+  for (int i=prev; i<10; i++)
+  {
+    sum += solve(i, current+1, n);
+  }
 
-    return num;
-
+  return sum;
+  // ...
 }
 
 
