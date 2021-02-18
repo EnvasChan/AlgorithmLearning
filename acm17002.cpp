@@ -6,10 +6,47 @@ using namespace std;
 
 // 끝나는 조건
 
+
+/*
+4
+    1
+        0 r
+    2
+        0 r
+        1
+            0 r
+        r
+    r
+    3
+        0 r
+        1
+            0 r
+        r
+        2
+            0 r
+            1
+                0 r
+            r
+        r
+    r
+3
+    0r
+    2
+        0r
+        1
+            0r
+        
+
+
+*/
+
 int b = 0;
 long long dp[1001] = { 0 };
 
-long long solve(int n = 0)
+// f(n) = f(n-1) + f(n-2) + f(n-3)
+// f(10) = f(7) + f(8) + f(9)
+// f(n) = f(n-3) + f(n-2) + f(n-1)
+long long solve(int n )
 {
     long long a = 0;
 
