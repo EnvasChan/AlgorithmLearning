@@ -7,6 +7,10 @@
 using namespace std;
 int dp[275] = {0};
 
+int main()
+{
+    return 0;
+}
 /*
 n = 4
     1+1+1+1

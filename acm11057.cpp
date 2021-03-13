@@ -54,7 +54,7 @@ using namespace std;
 
 */
 
-
+//sum이란 변수는 그저 solve함수에 값을 넣어주는 용도
 
 
 int dp[10][1001] = {0};
@@ -80,6 +80,7 @@ int solve(int prev, int current, int n)
   for (int i=prev; i<10; i++)
   {
     sum += solve(i, current+1, n);
+    
   }
   dp[prev][n-current] = sum;
   return sum;

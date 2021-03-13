@@ -3,6 +3,7 @@
 #include <queue>
 #include <vector>
 #include <cstdlib>
+
 using namespace std;
 
 struct job
@@ -56,89 +57,88 @@ int main()
     jisu.priority = 1;
     jisu.color = 'R';
     
-    for(int i = 0; i < c; i++)
-    {
-        int d, f;
-        char e;
+    // for(int i = 0; i < c; i++)
+    // {
+    //     int d, f;
+    //     char e;
 
-        cin >> d >> e >> f;
+    //     cin >> d >> e >> f;
 
-        //umu[i].c = e;
-        //umu[i].start_time = d;
+    //     //umu[i].c = e;
+    //     //umu[i].start_time = d;
 
-        if(e == sangmin.color)//상민
-        {
-            if(d < sangmin.available_time)
-            {
-                d = sangmin.available_time;
-            }
-            // 5 7 9 
-            // 5 7 19
-            for(int j = 0; j < f; j++)
-            {
-                int start_time = d + j * sangmin.speed;
-                job jo;
-                jo.priority = start_time * 2 + sangmin.priority;
-                jo.c = e;
-                pq.push(jo);
-            }
-            sangmin.available_time = d + f * jisu.speed;
-        }
-        else//지수
-        {
-            if(d < jisu.available_time)
-            {
-                d = jisu.available_time;
-            }
+    //     if(e == sangmin.color)//상민
+    //     {
+    //         if(d < sangmin.available_time)
+    //         {
+    //             d = sangmin.available_time;
+    //         }
+    //         // 5 7 9 
+    //         // 5 7 19
+    //         for(int j = 0; j < f; j++)
+    //         {
+    //             int start_time = d + j * sangmin.speed;
+    //             job jo;
+    //             jo.priority = start_time * 2 + sangmin.priority;
+    //             jo.c = e;
+    //             pq.push(jo);
+    //         }
+    //         sangmin.available_time = d + f * jisu.speed;
+    //     }
+    //     else//지수
+    //     {
+    //         if(d < jisu.available_time)
+    //         {
+    //             d = jisu.available_time;
+    //         }
 
-            for(int j = 0; j < f; j++)
-            {
-                 int start_time = d + j * jisu.speed;
-                job jo;
-                jo.priority = start_time * 2 + jisu.priority;
-                jo.c = e;
-                pq.push(jo);
-            }
-            jisu.available_time = d + f * jisu.speed;
-        }
+    //         for(int j = 0; j < f; j++)
+    //         {
+    //              int start_time = d + j * jisu.speed;
+    //             job jo;
+    //             jo.priority = start_time * 2 + jisu.priority;
+    //             jo.c = e;
+    //             pq.push(jo);
+    //         }
+    //         jisu.available_time = d + f * jisu.speed;
+    //     }
         
-    }
+    // }
+    // int peresent_index = 1;
+    // while (!pq.empty())
+    // {
+    //     auto j = pq.top();
+    //     pq.pop();
+    //     if(j.c == sangmin.color)
+    //     {
+    //         sangmin_s.push_back(peresent_index); 
+    //     }
+    //     else
+    //     {
+    //         jisu_s.push_back(peresent_index); 
+    //     }
+    //     peresent_index +=1;
+    // }
 
-    int peresent_index = 1;
-    while (!pq.empty())
-    {
-        auto j = pq.top();
-        pq.pop();
-        if(j.c == sangmin.color)
-        {
-            sangmin_s.push_back(peresent_index); 
-        }
-        else
-        {
-            jisu_s.push_back(peresent_index); 
-        }
-        peresent_index +=1;
-    }
+    // cout << sangmin_s.size();
 
-    cout << sangmin_s.size();
+    // cout << endl;
 
-    cout << endl;
+    // for(int i = 0 ; i < sangmin_s.size(); i++)
+    // {
+    //     cout << sangmin_s[i] << " ";
+    // }
 
-    for(int i = 0 ; i < sangmin_s.size(); i++)
-    {
-        cout << sangmin_s[i] << " ";
-    }
+    // cout << endl;
 
-    cout << endl;
+    // cout << jisu_s.size() << endl;
 
-    cout << jisu_s.size() << endl;
+    // for(int i = 0 ; i < jisu_s.size(); i++)
+    // {
+    //     cout << jisu_s[i] << " ";
+    // }
 
-    for(int i = 0 ; i < jisu_s.size(); i++)
-    {
-        cout << jisu_s[i] << " ";
-    }
-
-    cout << endl;
+    // cout << endl;
 
     system("pause");
     return 0;
