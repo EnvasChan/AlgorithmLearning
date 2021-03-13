@@ -40,7 +40,6 @@ int fibonacci2(int f)
     for (int i=3; i<=f; i++)
     {
         fib[i] = fib[i -1] + fib[i - 2];
-
     }
 
     return fib[f];
